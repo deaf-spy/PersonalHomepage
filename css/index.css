@@ -1,0 +1,639 @@
+
+:root {
+  --solarized-dark: #002b36;
+  --solarized-light: #fdf6e3;
+
+  --background-color: #002b36;
+  --color: #fdf6e3;
+  --opacity: 30%;
+  --delay: 2s;
+  --delay2: 0.8s;
+  --white: #000000;
+  --black: #FFFFFF;
+  --actualChessboard: 0.3776271;
+  --chessboardPercentage: 0.3666271;
+  --lightModeOpacity: 40%;
+  --darkModeOpacity: 10%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, head {
+  font-family: Sora;
+  background-color: var(--background-color);
+  color: var(--color);
+  opacity: 60%;
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition:
+    background-color ease-out var(--delay),
+    color ease-out var(--delay);
+  
+  
+
+}
+
+
+
+/* body::-webkit-scrollbar {
+  width: 0.65rem;
+  border: 5px solid;
+  transition: background-color ease-out var(--delay);
+
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--black);
+  
+  transition: background-color ease-out var(--delay);
+
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 0.25rem;
+  background-color: var(--color);
+  border-radius: 8px;
+  transition: background-color ease-out var(--delay);
+
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* wrappers */
+
+#outerwrapper {
+  width: 100vh;
+  height: 100vw;
+
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  position: absolute;
+}
+
+#innerwrapper {
+  display: flex;
+  flex-direction: row;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+  width: 1722;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+  position: absolute;
+}
+
+
+/* sections */
+
+.section1 { /* main template */
+  width: 100vw;
+  height: calc(105vh);
+  padding: 0px 0px;
+  position: sticky;
+  top: 0;
+}
+
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vw;
+}
+
+.section3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* backgrounds */
+
+.bgwrapper {
+  /* position: fixed; */
+  position: absolute;
+  height: 100vh;
+  width: 200vw;
+  /* top: 50px; */
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.bg1 {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+  position: fixed;
+  background-repeat: no-repeat;
+  opacity: 40%;
+  background-size: 100% 100%;
+  filter: invert();
+  z-index: 0;
+  background-image: url("../img/bg/bg1.jpeg");
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  transition: opacity 5s ease-out;
+}
+
+.bg1.hidden {
+  opacity: 0%;
+  transition: opacity 5s ease-out;
+}
+
+/* overlays */
+
+.overlay1 {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-repeat: repeat;
+  /* background-repeat: repeat-x; */
+  background-size: auto;
+  opacity: var(--lightModeOpacity);
+  background-image: url("../img/ol/lol/ol7.png");
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay1.hidden {
+  opacity: 0%;
+  transition: opacity 3s ease-in-out;
+}
+
+
+/* navbar */
+
+.navbar {
+  visibility: visible;
+  transform: translateY(0px);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  width: 100%;
+  height: 7.2%;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-size: 1 rem;
+  z-index: 1;
+  background-color: var(--black);
+  transition:
+    background-color ease-out var(--delay),
+    color ease-out var(--delay),
+    transform 2s ease-out, visibility 0s;
+
+}
+
+.navbar.hidden {
+  visibility: hidden;
+  transform: translateY(-70px);
+  transition: transform 2s ease-out, visibility 1s;
+}
+
+.logo {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  transition:
+    filter var(--delay) ease-out;
+}
+
+.logo.filtered {
+  filter: invert(1);
+}
+
+
+/* transition arrows */
+
+.scroll {
+  /* right: 10px; */
+  top: 93vh;
+  opacity: 100%;
+  position: fixed;
+  z-index: 10;
+
+  transform: translateX(0px);
+  transition:
+
+    color ease-out var(--delay),
+    transform 1s ease-out, opacity 1s;
+}
+
+.scrollLeft.hidden {
+  /* opacity: 50%; */
+  transform: translateX(-60px);
+  transition: transform 1s ease-out, opacity 1s;
+}
+
+.scrollRight.hidden {
+  /* opacity: 50%; */
+  transform: translateX(60px);
+  transition: transform 1s ease-out, opacity 1s;
+}
+
+
+/* miscellaneous */
+
+.everything2 {
+  
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 100%;
+  width: 100%;
+  
+
+}
+
+.image1 {
+  background-image: url("/img/blacklogo.png");
+  background-repeat: repeat;
+  filter: invert(1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 10%;
+  background-size: 2vw;
+}
+
+.hitbox {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	/* width: calc(var(--chessboardPercentage) * 100vw);
+	height: calc(var(--chessboardPercentage) * 100vw); */
+  width: 500px;
+  height: 500px;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  position: absolute;
+  /* background-color: red; */
+  z-index: 10;
+}
+
+/* #hitbox {
+
+} */
+
+#hitbox2 {
+  z-index: 100;
+}
+
+
+/* chessboard */
+
+.chessboard1 {
+  position: absolute;
+  /* top: 15vh;
+  left: 33vw; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	/* height: calc(var(--chessboardPercentage) * 100vmin);
+	width: calc(var(--chessboardPercentage) * 100vmin); */
+  /* width: 500px;
+  height: 500px; */
+  height: 70vmin; 
+  width: vmin;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  opacity: 90%;
+  z-index: 2;
+  box-shadow: 0.2vw 0.2vw 7vw var(--color),
+    -2px 1px 30px var(--color);
+  /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+  transition:
+    /* width var(--delay) ease-out,
+    height var(--delay) ease-out, */
+    opacity var(--delay2) ease-out,
+    box-shadow 0.5s ease-out;
+  
+}
+
+.chessboard1.hidden {
+  opacity: var(--opacity);
+  box-shadow: 0.2vw 0.2vw 2vw var(--color),
+    -2px 1px 30px var(--color);
+  
+  transition:
+    /* width var(--delay) ease-out,
+    height var(--delay) ease-out, */
+    opacity var(--delay2) ease-out,
+    box-shadow var(--delay2) ease-out;
+}
+
+
+/* namewrappers */
+
+.namewrapper1 {
+  
+  position: absolute; 
+  /* position: fixed; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.namewrapper2 {
+  position: fixed;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 13vw;
+  font-weight: bold;
+  /* text-shadow: 3px 3px 20px var(--color), */
+    /* -2px 1px 30px var(--color); */
+  text-shadow: 0.8vw 0 0 black;
+}
+
+.myname {
+  font-size: 6vw;
+  font-weight: bold;
+  position: fixed;
+  /* text-shadow: -0.8vw 0 0 black; */
+  opacity: 100%;
+  
+  transition: font-size 0.8s ease-in-out,
+  z-index 0.8s ease-in-out,
+  text-shadow 0.8s ease-in-out;
+  z-index: 9;
+}
+
+.myname.lol {
+  /* display: flex;
+  align-items: center;
+  height: 400px; */
+  font-size: 13vw;
+  font-weight: bold;
+  /* text-shadow: 3px 3px 20px var(--color), */
+    /* -2px 1px 30px var(--color); */
+  /* text-shadow: -0.8vw 0 0 black; */
+  opacity: 100%;
+
+  pointer-events: all;
+  transition: font-size 0.8s ease-in-out,
+  text-shadow 0.8 ease-in-out,
+  opacity 0.8s ease-in-out;
+  /* transition: opacity 1s ease-out; */
+}
+
+.myname.lol2 {
+  text-shadow: 0.8vw 0 0 black;
+  transition: font-size 0.8s ease-in-out,
+  text-shadow 1s ease-in-out,
+  opacity 0.8s ease-in-out;
+
+}
+
+.myname:hover, .myname.hover {
+  font-size: 13.5vw;
+  opacity: 20%;
+  transition: font-size 0.5s ease-in-out,
+  text-shadow 1s ease-in-out,
+  opacity 0.5s ease-in-out;
+}
+
+.myname.hidden {
+  opacity: 0%;
+  font-size: 13.5vw;
+  transition: font-size 0.5s ease-in-out,
+  z-index 1s ease-in-out,
+  text-shadow 1s ease-in-out,
+  opacity 0.5s ease-in-out;
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.name2 {
+  display:flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  font-size: 20vw;
+  font-weight: bold;
+  letter-spacing: 20px;
+  top: -20px;
+  left: 30px;
+  bottom: 0;
+}
+
+.name3 {
+
+  display:flex;
+  text-align: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 3vw;
+  width: 100vmin; 
+  height: 100vmin;
+  right: 7%;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+.text {
+  display:flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+  z-index: 20;
+}
+
+.text.hidden {
+  display: none;
+}
+
+.text2 {
+  display:flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vw;
+  z-index: 20;
+}
+
+.text2.hidden {
+  display: none;
+}
+
+
+.text3 {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  bottom: -140px;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 30px;
+}
+
+.text4 {
+  /* navbar text */
+  margin-left: 10px;
+}
+
+.text5 {
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 32px var(--color),
+      0 0 62px var(--color),
+      0 0 72px var(--color),
+      0 0 82px var(--color),
+      0 0 131px var(--color);
+} 
+
+.container {
+  display: table;
+  opacity: 10%;
+}
+
+.row {
+  display: table-row;
+}
+
+
+.tilew img {
+  vertical-align: center;
+}
+
+.tileb img {
+  vertical-align: center;
+}
+
+
+/* buttons */
+
+.buttonwrapper {
+  margin-right: 10px;
+}
+
+.button {
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.button1 {
+
+  
+  padding: 15px 15px;
+  width: 30px;
+  height: 30px;
+  border: solid;
+  color: var(--background-color);
+  border-color: var(--background-color);
+  background-color: var(--color);
+  border-radius: 8px;
+  transition:
+    background-color ease-out var(--delay),
+    border ease-out var(--delay);
+  
+}
+
+.button2 {
+
+  position: absolute;
+  padding: 15px 50px;
+  height: 30px;
+  border: solid;
+  color: var(--background-color);
+  border-color: var(--background-color);
+  background-color: var(--color);
+  border-radius: 8px;
+  top: 45%;
+  right: 10%;
+  transition:
+    background-color ease-out 1s,
+    border ease-out 1s,
+    color 1s;
+}
+
+.button:hover {
+  border-color: var(--color);
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+
+/* fontawesome stuff */
+
+.fa-moon, .fa-sun {
+  color: inherit;
+}
+
+.fa-arrow-down {
+  color: inherit;
+}
+
+/*
+scrapped since ugly
+.roundnav {
+  top: -14500px;
+  right: -170%;
+
+  background color is supposed to be --black
+  background-color: red;
+  position: absolute;
+  width: 30000px;
+  height: 15000px;
+  z-index: 20;
+  border-radius: 50%;
+  
+}
+*/
+
+.box1 {
+  width: 100%;
+  opacity: 80%;
+  height: 200%;
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 1), var(--background-color));
+  /* background-color: rgba(0, 0, 0, 0.61); */
+}
+
+a {
+  text-decoration: none;
+}

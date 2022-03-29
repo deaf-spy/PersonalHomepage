@@ -1,0 +1,18 @@
+[Event "Import"]
+[Site "https://lichess.org/2blZHcIU"]
+[Date "2021.12.30"]
+[White "?"]
+[Black "?"]
+[Result "0-1"]
+[UTCDate "2021.12.30"]
+[UTCTime "12:37:27"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "C50"]
+[Opening "Giuoco Piano"]
+[Termination "Normal"]
+[Annotator "lichess.org"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Nc3 d6 5. h3 Nf6 6. d3 h6 7. O-O Be6 8. Nd5 O-O 9. c3 Bb6 10. Be3 Re8 11. Re1 Bxe3 12. fxe3 Na5 13. Nxf6+ Qxf6 14. Bxe6 Qxe6 15. b4 Nc6 16. a4 a5 17. b5 Ne7 18. Nd2 d5 19. c4 c6 20. exd5 cxd5 21. e4 dxc4 22. dxc4 b6 23. Qc2 Rac8 24. Rac1 Rc7 25. Re3 Rec8 26. Rf1 Ng6 27. Qd1 Nf4 28. h4 Rd7 29. Qc2 Rd4 30. Rc1 Qg4 31. Nf3 Rdxc4 32. Qf2 Rxc1+ 33. Kh2 R8c2 34. Nd2 Qxg2+ 35. Qxg2 Nxg2 36. Kxg2 Rxd2+ 37. Kg3 Rdc2 38. Kg4 Rc3 39. Re2 g6 40. h5 Kg7 41. Rg2 Rc4 42. hxg6 fxg6 43. Rd2 Rxe4+ 44. Kf3 Rf4+ 45. Kg3 Rc3+ 46. Kg2 Rd4 47. Rxd4 exd4 48. Kf2 Re3 49. Kg2 Re2+ 50. Kf3 d3 51. Kg3 d2 52. Kf3 d1=Q 53. Kg3 Qd3+ 54. Kf4 Re4# 0-1

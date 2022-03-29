@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/82d9888c11.js" crossorigin="anonymous"></script>
+  <meta property="og:url" content="http://shreyupalley.rf.gd/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Sora' rel='stylesheet'>
+  <link rel="icon" type="image/png" href="img/whitelogo.png?v=3" />
+
+  <script>
+    document.write('<link rel="stylesheet" type="text/css" href="css/index.css?dev=' + Math.floor(Math.random() * 100) +
+      '">');
+  </script>
+  <script>
+    document.write('<link rel="stylesheet" type="text/css" href="css/connect4.css?dev=' + Math.floor(Math.random() *
+      100) + '">');
+  </script>
+  <link rel="stylesheet" type='text/css' href='css/chessboard-1.0.0.min.css'>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous">
+  </script>
+
+  <script>
+    src = "js/sw1.js"
+  </script>
+  <script>
+    src = "js/sw2.js"
+  </script>
+
+
+  <script src="js/chessboard-1.0.0.min.js"></script>
+  <!---
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+          integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+          crossorigin="anonymous"></script> --->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"
+    integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous">
+  </script>
+
+  <title>Shreyu Palley</title>
+</head>
+
+<body>
+  <div class="bg1 hidden" style="height: 100vh;"></div>
+  <div class="overlay1 hidden"></div>
+
+  <div class="navbar hidden">
+    <img src="img/blacklogo.png" class="logo filtered"></img>
+    <div class="text4" style="flex-grow: 1; font-weight: 900; font-size: 1.5vw;"> Shreyu Palley</div>
+    <div class="buttonwrapper">
+      <button class="button button1" onclick="switcher(); colorer();">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </div>
+  <!--   
+  <a id="left" class="scroll scrollLeft hidden" href = "#welcome" style="left: 1vw;">
+    <button class="button button1" style="z-index: 11;" onclick = moveLeft();>
+      <div class="fa-solid fa-arrow-left" style="font-family: FontAwesome; "></div>
+       
+    </button>
+  </a> -->
+  <!-- <a id="right" class="scroll scrollRight hidden" href = "#welcome" style="right: 1vw;">
+    <button class="button button1" style="z-index: 11;" onclick = moveRight();>
+      <div class="fa-solid fa-arrow-right" style="font-family: FontAwesome; "></div>
+      
+    </button>
+  </a> 
+  -->
+  <!-- 
+  <div class="bgwrapper">
+    <div class="bg1" style="height: 100vh;"></div>
+     <div class="bg2"></div>
+     <div class="bg1 bg3"></div>
+    
+  </div>
+   -->
+
+
+  <div class="namewrapper1">
+
+    <div class="myname hidden">
+      Shreyu Palley
+    </div>
+  </div>
+
+
+  <!-- <div class = "text">
+    <i class="fa fa-regular fa-lightbulb" style="font-family: FontAwesome"></i>
+    <i class="fa fa-regular fa-lightbulb" style="font-family: FontAwesome;"></i>
+    </div>
+    <div class = "text2 hidden">
+    <i class="fa fa-solid fa-lightbulb"></i> 
+
+    </div> -->
+  <!-- ends section 1-->
+
+
+
+  <div id="outerwrapper">
+    <div id="innerwrapper">
+
+
+
+
+      <div id="chess" class="section1">
+        <!-- <div class="overlay1"></div> -->
+        <!-- <div id="hitbox" class="hitbox" style="z-index: -10;"></div> -->
+        <div  class="chessboard1 hidden">
+        <div id="board1" style="position: absolute; height: 70vmin; width: 70vmin;">
+        </div>
+        </div>
+      </div>
+
+      <!-- <div id="welcome" class="section1 section2">
+
+        <b style="font-size: 15vw;">Welcome!</b>
+        <div class="text1" style="text-align: center; max-width: 40vw; font-size: 2vw;">
+          Try interacting with this website
+          <br></br>
+          Have a good time!
+        </div>
+      </div> -->
+      <div id="connect4" class="section1 section3">
+        <!-- <div class="overlay3"></div> -->
+        <!-- <div class="overlay1"></div> -->
+        <!-- <div id="hitbox2" class="hitbox"></div> -->
+        <div class="connect4boardwrapper hidden">
+          <div class="connect4board">
+
+            <div id="column0" class="column">
+              <div id="row0" class="row"></div>
+              <div id="row1" class="row"></div>
+              <div id="row2" class="row"></div>
+              <div id="row3" class="row"></div>
+              <div id="row4" class="row"></div>
+              <div id="row5" class="row"></div>
+
+            </div>
+            <div id="column1" class="column">
+              <div id="row6" class="row"></div>
+              <div id="row7" class="row"></div>
+              <div id="row8" class="row"></div>
+              <div id="row9" class="row"></div>
+              <div id="row10" class="row"></div>
+              <div id="row11" class="row"></div>
+
+            </div>
+            <div id="column2" class="column">
+              <div id="row12" class="row"></div>
+              <div id="row13" class="row"></div>
+              <div id="row14" class="row"></div>
+              <div id="row15" class="row"></div>
+              <div id="row16" class="row"></div>
+              <div id="row17" class="row"></div>
+
+            </div>
+            <div id="column3" class="column">
+              <div id="row18" class="row"></div>
+              <div id="row19" class="row"></div>
+              <div id="row20" class="row"></div>
+              <div id="row21" class="row"></div>
+              <div id="row22" class="row"></div>
+              <div id="row23" class="row"></div>
+
+            </div>
+            <div id="column4" class="column">
+              <div id="row24" class="row"></div>
+              <div id="row25" class="row"></div>
+              <div id="row26" class="row"></div>
+              <div id="row27" class="row"></div>
+              <div id="row28" class="row"></div>
+              <div id="row29" class="row"></div>
+
+            </div>
+            <div id="column5" class="column">
+              <div id="row30" class="row"></div>
+              <div id="row31" class="row"></div>
+              <div id="row32" class="row"></div>
+              <div id="row33" class="row"></div>
+              <div id="row34" class="row"></div>
+              <div id="row35" class="row"></div>
+
+            </div>
+            <div id="column6" class="column">
+              <div id="row36" class="row"></div>
+              <div id="row37" class="row"></div>
+              <div id="row38" class="row"></div>
+              <div id="row39" class="row"></div>
+              <div id="row40" class="row"></div>
+              <div id="row41" class="row"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        document.write('<script src="/js/connect4.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');
+      </script>
+      <script src="js/chesscode.js"></script>
+      <script>
+        document.write('<script src="/js/index.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');
+      </script>
+      <script>
+        src = "js/stockfish/stockfish.js"
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

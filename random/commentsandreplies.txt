@@ -1,0 +1,10 @@
+{
+"When life gives you a lemon": "squirt it in someone's eyes",
+"Nothing is impossible": "...Except learning C++",
+"You can do anything!": "As long as you're getting paid for it",
+
+}
+
+
+//shaurya's thingie
+Impossible literally says Im possible... but what in you is possible?
